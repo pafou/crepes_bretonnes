@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if envoi %}Votre article est bien créé !{% endif %}
+<form action="{% url "article" %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
